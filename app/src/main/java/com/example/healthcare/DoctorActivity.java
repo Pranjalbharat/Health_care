@@ -63,16 +63,16 @@ public class DoctorActivity extends AppCompatActivity {
     }
 
     private void registerUser(String email, String password) {
-        auth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(DoctorActivity.this, new OnCompleteListener < AuthResult > () {
+        auth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(DoctorActivity.this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
-                    Toast.makeText(DoctorActivity.this,"Registerd successfully",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(DoctorActivity.this,"registeration is suceesful ",Toast.LENGTH_SHORT).show();
+
                 }
                 else{
-                    Toast.makeText(DoctorActivity.this,"Registeration failed ",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(DoctorActivity.this,"registeration failed ",Toast.LENGTH_SHORT).show();
                 }
-
             }
         });
 

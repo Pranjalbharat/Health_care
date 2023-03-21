@@ -35,7 +35,7 @@ public class UserActivity extends AppCompatActivity {
         password = findViewById(R.id.editTextPassword);
         register=findViewById(R.id.button);
         auth= FirebaseAuth.getInstance();
-        button2=findViewById(R.id.imageButton2);
+
 
 
         register.setOnClickListener(new View.OnClickListener() {
