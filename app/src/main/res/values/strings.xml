@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Healthcare</string>
+    <string name="login_as_doctor">login_as_doctor</string>
+    <string name="login_text">login_text</string>
+    <string name="log_in">Log-in</string>
+    <string name="login_as_user">login_as_user</string>
+    <string name="doctor">Doctor</string>
+    <string name="user">User</string>
 </resources>
