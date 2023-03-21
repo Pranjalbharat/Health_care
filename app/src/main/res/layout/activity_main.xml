@@ -7,10 +7,85 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="60dp"
+        android:background="#3FA0C2"
+        android:paddingHorizontal="120px"
+        android:paddingVertical="20px"
+        android:text="User"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/imageButton2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.65" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:background="#3FA0C2"
+        android:paddingHorizontal="70px"
+        android:paddingVertical="20px"
+        android:text="Doctor"
+        android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.13"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton"
+        app:layout_constraintVertical_bias="0.42000002" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="211dp"
+        android:layout_height="228dp"
+        android:layout_alignParentTop="true"
+        android:adjustViewBounds="false"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="login_as_user"
+        android:cropToPadding="false"
+        android:padding="0dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/user"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.061"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.445" />
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="211dp"
+        android:layout_height="228dp"
+        android:layout_alignParentTop="true"
+        android:adjustViewBounds="false"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:cropToPadding="false"
+        android:padding="0dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/user"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.873"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.886" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="login_text"
+        android:text="Log-in"
+        android:textSize="60sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/imageButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
