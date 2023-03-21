@@ -79,6 +79,7 @@ public class login_creator_details extends AppCompatActivity {
                     number.setError("Phone number is required.");
                     data_check = false;
                 }
+
                 if(isEmpty(address)){
                     address.setError("Address is required.");
                     data_check = false;
