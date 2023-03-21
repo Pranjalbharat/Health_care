@@ -26,7 +26,7 @@
                 android:text="@string/first_name" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName2"
+                android:id="@+id/name_data"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autofillHints="First Name"
@@ -43,7 +43,7 @@
                 android:text="@string/last_name" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName3"
+                android:id="@+id/lastname_data"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autofillHints="Last Name"
