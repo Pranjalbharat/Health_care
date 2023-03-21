@@ -29,11 +29,11 @@ public class UserActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_doctor);
+        setContentView(R.layout.activity_user2);
 
         email= findViewById(R.id.editTextEmail);
         password = findViewById(R.id.editTextPassword);
-        register=findViewById(R.id.button);
+        register=findViewById(R.id.button2);
         auth= FirebaseAuth.getInstance();
 
 
