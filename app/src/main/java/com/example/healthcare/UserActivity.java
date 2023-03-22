@@ -15,6 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -86,7 +87,7 @@ public class UserActivity extends AppCompatActivity {
                 else if(text_password.length() <6){
                     password.setError("password too short");
                 }else{
-                    registerUser(text_email,text_password);
+                    loginUser(auth,text_email,text_password);
                 }
             }
         });
@@ -101,25 +102,19 @@ public class UserActivity extends AppCompatActivity {
         return (!TextUtils.isEmpty(email) && Patterns.EMAIL_ADDRESS.matcher(email).matches());
     }
 
-    private void registerUser(String email, String password) {
-        auth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(UserActivity.this, new OnCompleteListener<AuthResult>() {
+    private void loginUser(FirebaseAuth auth,String email, String password) {
+        auth.signInWithEmailAndPassword(email,password).addOnCompleteListener(UserActivity.this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
-                    Toast.makeText(UserActivity.this,"login successfully",Toast.LENGTH_SHORT).show();
-                    Intent intent=new Intent(getApplicationContext(),TestingActivity.class);
-                    startActivity(intent);
+                    Toast.makeText(getApplicationContext(),"Log-in successful :)",Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(UserActivity.this, TestingActivity.class));
                     finish();
-
-
                 }
                 else{
-                    Toast.makeText(UserActivity.this,"login failed ",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),"Log-in Failed :(",Toast.LENGTH_SHORT).show();
                 }
-
             }
         });
-
     }
-
 }
