@@ -29,7 +29,7 @@ public class TestingActivity extends AppCompatActivity {
         user_details=findViewById(R.id.user_details);
         user=mauth.getCurrentUser();
         if(user == null){
-            Intent intent= new Intent(getApplicationContext(),UserActivity.class);
+            Intent intent= new Intent(getApplicationContext(),MainActivity.class);
             startActivity(intent);
             finish();
         }
@@ -41,7 +41,7 @@ public class TestingActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 FirebaseAuth.getInstance().signOut();
-                Intent intent= new Intent(getApplicationContext(),UserActivity.class);
+                Intent intent= new Intent(getApplicationContext(),MainActivity.class);
                 startActivity(intent);
                 finish();
             }
