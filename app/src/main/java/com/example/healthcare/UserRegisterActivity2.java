@@ -20,13 +20,12 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class UserActivity extends AppCompatActivity {
+public class UserRegisterActivity2 extends AppCompatActivity {
 
     private EditText email;
     private EditText password;
     private Button register;
-
-    private TextView registerNow;
+    private TextView loginNow;
 
     private FirebaseAuth auth;
 
@@ -45,28 +44,28 @@ public class UserActivity extends AppCompatActivity {
 
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_user2);
+        setContentView(R.layout.activity_user_register2);
 
         email= findViewById(R.id.editTextEmail);
         password = findViewById(R.id.editTextPassword);
         register=findViewById(R.id.button2);
-        registerNow=findViewById(R.id.register_text);
+        loginNow=findViewById(R.id.login_text);
         auth= FirebaseAuth.getInstance();
 
 
-        registerNow.setOnClickListener(new View.OnClickListener() {
+
+
+
+        loginNow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(UserActivity.this, UserRegisterActivity2.class));
+                startActivity(new Intent(UserRegisterActivity2.this, UserActivity.class));
                 finish();
             }
         });
-
-
 
 
         register.setOnClickListener(new View.OnClickListener() {
@@ -102,24 +101,19 @@ public class UserActivity extends AppCompatActivity {
     }
 
     private void registerUser(String email, String password) {
-        auth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(UserActivity.this, new OnCompleteListener<AuthResult>() {
+        auth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(UserRegisterActivity2.this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
-                    Toast.makeText(UserActivity.this,"login successfully",Toast.LENGTH_SHORT).show();
-                    Intent intent=new Intent(getApplicationContext(),TestingActivity.class);
-                    startActivity(intent);
-                    finish();
-
+                    Toast.makeText(UserRegisterActivity2.this,"Registerd successfully",Toast.LENGTH_SHORT).show();
 
                 }
                 else{
-                    Toast.makeText(UserActivity.this,"login failed ",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(UserRegisterActivity2.this,"Registeration failed ",Toast.LENGTH_SHORT).show();
                 }
 
             }
         });
 
     }
-
 }

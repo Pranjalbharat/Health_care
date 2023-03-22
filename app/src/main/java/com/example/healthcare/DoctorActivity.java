@@ -11,12 +11,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class DoctorActivity extends AppCompatActivity {
 
@@ -26,6 +28,19 @@ public class DoctorActivity extends AppCompatActivity {
 
 
     private FirebaseAuth auth;
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        // Check if user is signed in (non-null) and update UI accordingly.
+        FirebaseUser currentUser = auth.getCurrentUser();
+        if(currentUser != null){
+            Intent intent=new Intent(getApplicationContext(),TestingActivity.class);
+            startActivity(intent);
+            finish();
+
+        }
+    }
 
 
     @Override
@@ -37,7 +52,12 @@ public class DoctorActivity extends AppCompatActivity {
         password = findViewById(R.id.editTextPassword);
         register=findViewById(R.id.button2);
 
+
         auth= FirebaseAuth.getInstance();
+
+
+
+
 
 
         register.setOnClickListener(new View.OnClickListener() {
@@ -80,13 +100,13 @@ public class DoctorActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
-                    Toast.makeText(DoctorActivity.this,"registeration is suceesful ",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(DoctorActivity.this,"login is suceesful ",Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(DoctorActivity.this, login_creator_details.class));
                     finish();
 
                 }
                 else{
-                    Toast.makeText(DoctorActivity.this,"registeration failed ",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(DoctorActivity.this,"login failed ",Toast.LENGTH_SHORT).show();
                 }
             }
         });
