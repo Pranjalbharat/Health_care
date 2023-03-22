@@ -125,8 +125,7 @@
                 android:id="@+id/button"
                 android:layout_width="134dp"
                 android:layout_height="50dp"
-                android:text="Upload file"
-                android:theme="@style/Theme.Material3.DynamicColors.Dark"/>
+                android:text="Upload file" />
 
             <Button
                 android:id="@+id/submit_button"
