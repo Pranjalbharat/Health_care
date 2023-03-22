@@ -9,8 +9,8 @@
 
     <EditText
         android:id="@+id/editTextEmail"
-        android:layout_width="302dp"
-        android:layout_height="54dp"
+        android:layout_width="378dp"
+        android:layout_height="69dp"
         android:layout_marginStart="4dp"
         android:layout_marginTop="133dp"
         android:layout_marginEnd="2dp"
@@ -27,8 +27,8 @@
 
     <EditText
         android:id="@+id/editTextPassword"
-        android:layout_width="308dp"
-        android:layout_height="66dp"
+        android:layout_width="377dp"
+        android:layout_height="67dp"
         android:layout_marginStart="4dp"
         android:layout_marginTop="21dp"
         android:layout_marginEnd="4dp"
@@ -43,21 +43,8 @@
         app:layout_constraintTop_toBottomOf="@+id/editTextEmail"
         app:layout_constraintVertical_bias="0.0" />
 
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="112dp"
-        android:layout_height="75dp"
-        android:layout_marginStart="115dp"
-        android:layout_marginTop="64dp"
-        android:layout_marginEnd="151dp"
-        android:layout_marginBottom="38dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/editTextEmail"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.611"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.772" />
+
+
 
     <Button
         android:id="@+id/button2"
@@ -74,19 +61,21 @@
         app:layout_constraintTop_toBottomOf="@+id/editTextPassword" />
 
     <TextView
-        android:id="@+id/textView7"
-        android:layout_width="109dp"
-        android:layout_height="34dp"
-        android:layout_marginStart="139dp"
-        android:layout_marginTop="51dp"
-        android:layout_marginEnd="165dp"
-        android:layout_marginBottom="246dp"
-        android:text="----OR---"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/textView4"
+        android:layout_width="137dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="136dp"
+        android:layout_marginTop="55dp"
+        android:layout_marginEnd="178dp"
+        android:layout_marginBottom="39dp"
+        android:text="SIGN-IN"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/editTextEmail"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.425"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
