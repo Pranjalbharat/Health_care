@@ -81,6 +81,8 @@ public class DoctorActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
                     Toast.makeText(DoctorActivity.this,"registeration is suceesful ",Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(DoctorActivity.this, login_creator_details.class));
+                    finish();
 
                 }
                 else{

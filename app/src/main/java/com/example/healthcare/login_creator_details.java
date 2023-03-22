@@ -1,9 +1,13 @@
 package com.example.healthcare;
 
+import static android.content.ContentValues.TAG;
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -12,6 +16,13 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.MultiAutoCompleteTextView;
 import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
 
@@ -91,6 +102,21 @@ public class login_creator_details extends AppCompatActivity {
 
                 if(data_check){
                     HashMap<String,String> map = RecieveData(name,lastName,email,number,address,profession);
+                    FirebaseFirestore db = FirebaseFirestore.getInstance();
+                    db.collection("users").document("Doctor "+name.getText())
+                            .set(map).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Void> task) {
+                                    if(task.isSuccessful()){
+                                        Log.d(TAG, "DocumentSnapshot added :) ");
+                                        Toast.makeText(getApplicationContext(),"Registration Successful",Toast.LENGTH_SHORT).show();
+                                    }
+                                    else{
+                                        Log.w(TAG, "Error adding document :( ");
+                                        Toast.makeText(getApplicationContext(),"Registration Failed",Toast.LENGTH_SHORT).show();
+                                    }
+                                }
+                            });
                 }
             }
         });
