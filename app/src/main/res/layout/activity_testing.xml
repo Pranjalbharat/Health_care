@@ -8,6 +8,16 @@
     android:layout_height="match_parent"
     tools:context=".TestingActivity">
 
+    <EditText
+        android:id="@+id/doctor_name"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Doctor's name"
+        android:text="" />
+
     <Button
         android:id="@+id/check_profile"
         android:layout_width="match_parent"
@@ -28,4 +38,5 @@
         android:layout_width="158dp"
         android:layout_height="wrap_content"
         android:text="logout" />
+
 </LinearLayout>
