@@ -8,11 +8,20 @@
     android:layout_height="match_parent"
     tools:context=".TestingActivity">
 
+    <Button
+        android:id="@+id/check_profile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="100dp"
+        android:text="Check Profile" />
+
     <TextView
         android:id="@+id/user_details"
-        android:layout_width="261dp"
-        android:layout_height="41dp"
-        android:text="TextView" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textSize="30dp" />
 
     <Button
         android:id="@+id/logout"

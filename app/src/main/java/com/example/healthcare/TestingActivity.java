@@ -14,6 +14,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class TestingActivity extends AppCompatActivity {
      private FirebaseAuth mauth;
     private Button logout ;
+    private Button check_profile ;
     private TextView user_details;
     private FirebaseUser user;
 
@@ -26,6 +27,7 @@ public class TestingActivity extends AppCompatActivity {
 
         mauth=FirebaseAuth.getInstance();
         logout=findViewById(R.id.logout);
+        check_profile=findViewById(R.id.check_profile);
         user_details=findViewById(R.id.user_details);
         user=mauth.getCurrentUser();
         if(user == null){
@@ -42,6 +44,17 @@ public class TestingActivity extends AppCompatActivity {
             public void onClick(View view) {
                 FirebaseAuth.getInstance().signOut();
                 Intent intent= new Intent(getApplicationContext(),MainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+
+        check_profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //FirebaseAuth.getInstance().signOut();
+                Intent intent= new Intent(getApplicationContext(),profile_doctors.class);
                 startActivity(intent);
                 finish();
             }
