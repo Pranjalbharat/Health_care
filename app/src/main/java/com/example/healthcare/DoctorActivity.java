@@ -15,6 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -26,6 +27,7 @@ public class DoctorActivity extends AppCompatActivity {
     private EditText password;
     private Button register;
 
+    private TextView registerNow;
 
     private FirebaseAuth auth;
 
@@ -43,19 +45,27 @@ public class DoctorActivity extends AppCompatActivity {
     }
 
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_doctor2);
+        setContentView(R.layout.activity_user2);
 
         email= findViewById(R.id.editTextEmail);
         password = findViewById(R.id.editTextPassword);
         register=findViewById(R.id.button2);
-
-
+        registerNow=findViewById(R.id.register_text);
         auth= FirebaseAuth.getInstance();
 
 
+        registerNow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(DoctorActivity.this, doctor_register.class));
+                finish();
+            }
+        });
 
 
 
@@ -77,13 +87,10 @@ public class DoctorActivity extends AppCompatActivity {
                 else if(text_password.length() <6){
                     password.setError("password too short");
                 }else{
-                    registerUser(text_email,text_password);
+                    loginUser(auth,text_email,text_password);
                 }
-
             }
         });
-
-
 
 
 
@@ -95,22 +102,19 @@ public class DoctorActivity extends AppCompatActivity {
         return (!TextUtils.isEmpty(email) && Patterns.EMAIL_ADDRESS.matcher(email).matches());
     }
 
-    private void registerUser(String email, String password) {
-        auth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(DoctorActivity.this, new OnCompleteListener<AuthResult>() {
+    private void loginUser(FirebaseAuth auth,String email, String password) {
+        auth.signInWithEmailAndPassword(email,password).addOnCompleteListener(DoctorActivity.this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
-                    Toast.makeText(DoctorActivity.this,"login is suceesful ",Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(DoctorActivity.this, login_creator_details.class));
+                    Toast.makeText(getApplicationContext(),"Log-in successful :)",Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(DoctorActivity.this, TestingActivity.class));
                     finish();
-
                 }
                 else{
-                    Toast.makeText(DoctorActivity.this,"login failed ",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),"Log-in Failed :(",Toast.LENGTH_SHORT).show();
                 }
             }
         });
     }
-
-
 }

@@ -11,7 +11,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,7 +20,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class UserRegisterActivity2 extends AppCompatActivity {
+public class doctor_register extends AppCompatActivity {
 
     private EditText email;
     private EditText password;
@@ -29,7 +28,6 @@ public class UserRegisterActivity2 extends AppCompatActivity {
     private TextView loginNow;
 
     private FirebaseAuth auth;
-    private ProgressBar progressBar;
 
     @Override
     public void onStart() {
@@ -55,7 +53,6 @@ public class UserRegisterActivity2 extends AppCompatActivity {
         password = findViewById(R.id.editTextPassword);
         register=findViewById(R.id.button2);
         loginNow=findViewById(R.id.login_text);
-        progressBar=findViewById(R.id.progressbar);
         auth= FirebaseAuth.getInstance();
 
 
@@ -65,7 +62,7 @@ public class UserRegisterActivity2 extends AppCompatActivity {
         loginNow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(UserRegisterActivity2.this, UserActivity.class));
+                startActivity(new Intent(doctor_register.this, DoctorActivity.class));
                 finish();
             }
         });
@@ -74,7 +71,6 @@ public class UserRegisterActivity2 extends AppCompatActivity {
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                progressBar.setVisibility(View.VISIBLE);
                 String text_email=email.getText().toString();
                 String text_password=password.getText().toString();
                 if(TextUtils.isEmpty(text_email)){
@@ -105,18 +101,16 @@ public class UserRegisterActivity2 extends AppCompatActivity {
     }
 
     private void registerUser(String email, String password) {
-        auth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(UserRegisterActivity2.this, new OnCompleteListener<AuthResult>() {
+        auth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(doctor_register.this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
-                progressBar.setVisibility(View.GONE);
                 if(task.isSuccessful()){
-                    Toast.makeText(UserRegisterActivity2.this,"Registerd successfully",Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(UserRegisterActivity2.this, UserActivity.class));
+                    Toast.makeText(doctor_register.this,"Registered successfully",Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(doctor_register.this, login_creator_details.class));
                     finish();
-
                 }
                 else{
-                    Toast.makeText(UserRegisterActivity2.this,"Registeration failed ",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(doctor_register.this,"Registration failed ",Toast.LENGTH_SHORT).show();
                 }
 
             }

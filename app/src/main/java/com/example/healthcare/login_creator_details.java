@@ -5,6 +5,7 @@ import static android.content.ContentValues.TAG;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -110,6 +111,8 @@ public class login_creator_details extends AppCompatActivity {
                                     if(task.isSuccessful()){
                                         Log.d(TAG, "DocumentSnapshot added :) ");
                                         Toast.makeText(getApplicationContext(),"Registration Successful",Toast.LENGTH_SHORT).show();
+                                        startActivity(new Intent(login_creator_details.this, TestingActivity.class));
+                                        finish();
                                     }
                                     else{
                                         Log.w(TAG, "Error adding document :( ");
