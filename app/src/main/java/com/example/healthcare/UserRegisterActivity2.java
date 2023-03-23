@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,6 +29,7 @@ public class UserRegisterActivity2 extends AppCompatActivity {
     private TextView loginNow;
 
     private FirebaseAuth auth;
+    private ProgressBar progressBar;
 
     @Override
     public void onStart() {
@@ -53,6 +55,7 @@ public class UserRegisterActivity2 extends AppCompatActivity {
         password = findViewById(R.id.editTextPassword);
         register=findViewById(R.id.button2);
         loginNow=findViewById(R.id.login_text);
+        progressBar=findViewById(R.id.progressbar);
         auth= FirebaseAuth.getInstance();
 
 
@@ -71,6 +74,7 @@ public class UserRegisterActivity2 extends AppCompatActivity {
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                progressBar.setVisibility(View.VISIBLE);
                 String text_email=email.getText().toString();
                 String text_password=password.getText().toString();
                 if(TextUtils.isEmpty(text_email)){
@@ -104,6 +108,7 @@ public class UserRegisterActivity2 extends AppCompatActivity {
         auth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(UserRegisterActivity2.this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
+                progressBar.setVisibility(View.GONE);
                 if(task.isSuccessful()){
                     Toast.makeText(UserRegisterActivity2.this,"Registerd successfully",Toast.LENGTH_SHORT).show();
 

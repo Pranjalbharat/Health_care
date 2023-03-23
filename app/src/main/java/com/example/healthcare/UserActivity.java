@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,6 +31,7 @@ public class UserActivity extends AppCompatActivity {
     private TextView registerNow;
 
     private FirebaseAuth auth;
+    private ProgressBar progressBar;
 
     @Override
     public void onStart() {
@@ -56,6 +58,7 @@ public class UserActivity extends AppCompatActivity {
         password = findViewById(R.id.editTextPassword);
         register=findViewById(R.id.button2);
         registerNow=findViewById(R.id.register_text);
+        progressBar=findViewById(R.id.progressbar);
         auth= FirebaseAuth.getInstance();
 
 
@@ -73,6 +76,7 @@ public class UserActivity extends AppCompatActivity {
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                progressBar.setVisibility(View.VISIBLE);
                 String text_email=email.getText().toString();
                 String text_password=password.getText().toString();
                 if(TextUtils.isEmpty(text_email)){
@@ -106,6 +110,7 @@ public class UserActivity extends AppCompatActivity {
         auth.signInWithEmailAndPassword(email,password).addOnCompleteListener(UserActivity.this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
+                progressBar.setVisibility(View.GONE);
                 if(task.isSuccessful()){
                     Toast.makeText(getApplicationContext(),"Log-in successful :)",Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(UserActivity.this, TestingActivity.class));
