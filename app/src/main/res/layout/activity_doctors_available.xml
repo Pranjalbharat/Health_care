@@ -107,7 +107,7 @@
                         android:textSize="20sp"
                         android:layout_marginTop="10dp"
 
-                        android:text="Pranjal Bharat" />
+                        android:text="Pranjal " />
 
 
                 </LinearLayout>
@@ -155,7 +155,7 @@
                         android:textSize="20sp"
                         android:layout_marginTop="10dp"
 
-                        android:text="Rashmi Puhal" />
+                        android:text="Rashmi " />
 
 
                 </LinearLayout>
@@ -203,7 +203,7 @@
                         android:textSize="20sp"
                         android:layout_marginTop="10dp"
 
-                        android:text="Shreya Mshira" />
+                        android:text="Shreya Mishra" />
 
 
                 </LinearLayout>
@@ -347,7 +347,7 @@
                         android:textSize="20sp"
                         android:layout_marginTop="10dp"
 
-                        android:text="Vanshika Chorpa" />
+                        android:text="Vanshika" />
 
 
                 </LinearLayout>
