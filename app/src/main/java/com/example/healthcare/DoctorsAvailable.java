@@ -50,17 +50,7 @@ public class DoctorsAvailable extends AppCompatActivity {
 
 
 
-        String D_names[]=new String[10];
-        D_names[0]="Shubham";
-        D_names[1]="Pranjal ";
-        D_names[2]="Rashmi ";
-        D_names[3]="Shreya";
-        D_names[4]="Swayam";
-        D_names[5]="Neeraj";
-        D_names[6]="Vanshika";
-        D_names[7]="Ditya";
-        D_names[8]="Pranshu";
-        D_names[9]="Sucrose";
+        String[] D_names = {"Shubham","Pranjal ","Rashmi ","Shreya","Swayam","Neeraj","Vanshika","Ditya","Pranshu","Sucrose"};
 
 
         d_name1.setText(D_names[0]);
