@@ -22,6 +22,7 @@
                 android:layout_height="140dp"
                 android:layout_margin="20dp"
                 android:elevation="10dp"
+               app:cardBackgroundColor="#0000"
                 app:cardCornerRadius="20dp">
 
                 <LinearLayout
@@ -68,6 +69,7 @@
                 android:layout_height="140dp"
                 android:layout_margin="20dp"
                 android:elevation="10dp"
+                app:cardBackgroundColor="#0000"
                 app:cardCornerRadius="20dp">
 
                 <LinearLayout
@@ -114,6 +116,7 @@
                 android:layout_height="140dp"
                 android:layout_margin="20dp"
                 android:elevation="10dp"
+                app:cardBackgroundColor="#0000"
                 app:cardCornerRadius="20dp">
 
                 <LinearLayout
@@ -160,6 +163,7 @@
                 android:layout_height="140dp"
                 android:layout_margin="20dp"
                 android:elevation="10dp"
+                app:cardBackgroundColor="#0000"
                 app:cardCornerRadius="20dp">
 
                 <LinearLayout
@@ -206,6 +210,7 @@
                 android:layout_height="140dp"
                 android:layout_margin="20dp"
                 android:elevation="10dp"
+                app:cardBackgroundColor="#0000"
                 app:cardCornerRadius="20dp">
 
                 <LinearLayout
@@ -252,6 +257,7 @@
                 android:layout_height="140dp"
                 android:layout_margin="20dp"
                 android:elevation="10dp"
+                app:cardBackgroundColor="#0000"
                 app:cardCornerRadius="20dp">
 
                 <LinearLayout
@@ -298,6 +304,7 @@
                 android:layout_height="140dp"
                 android:layout_margin="20dp"
                 android:elevation="10dp"
+                app:cardBackgroundColor="#0000"
                 app:cardCornerRadius="20dp">
 
                 <LinearLayout
@@ -344,6 +351,7 @@
                 android:layout_height="140dp"
                 android:layout_margin="20dp"
                 android:elevation="10dp"
+                app:cardBackgroundColor="#0000"
                 app:cardCornerRadius="20dp">
 
                 <LinearLayout
@@ -390,6 +398,7 @@
                 android:layout_height="140dp"
                 android:layout_margin="20dp"
                 android:elevation="10dp"
+                app:cardBackgroundColor="#0000"
                 app:cardCornerRadius="20dp">
 
                 <LinearLayout
@@ -436,6 +445,7 @@
                 android:layout_height="140dp"
                 android:layout_margin="20dp"
                 android:elevation="10dp"
+                app:cardBackgroundColor="#0000"
                 app:cardCornerRadius="20dp">
 
                 <LinearLayout
