@@ -5,7 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,6 +25,9 @@ import java.util.Map;
 
 public class profile_doctors extends AppCompatActivity {
 
+    private boolean liked1 = false;
+    private boolean liked2 = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,7 +38,6 @@ public class profile_doctors extends AppCompatActivity {
         ImageButton Profile_Pic = findViewById(R.id.profile_photo);
         TextView Name = findViewById(R.id.username_text);
         TextView Bio = findViewById(R.id.bio_text);
-
 
         Intent intent = getIntent();
         String str = intent.getStringExtra("data");
@@ -57,6 +62,7 @@ public class profile_doctors extends AppCompatActivity {
                         String fetchname = (String) map.get("First name").toString() +" "+map.get("Last name").toString();
                         Name.setText(fetchname);
                         Bio.setText(map.get("Profession").toString());
+
                     } else {
                         Toast.makeText(getApplicationContext(),"Failed",Toast.LENGTH_SHORT).show();
                     }
@@ -71,6 +77,55 @@ public class profile_doctors extends AppCompatActivity {
 //        String fullname = cloud_data[0]+" "+cloud_data[1];
 //        Name.setText(fullname);
 //        Bio.setText(cloud_data[2]);
+
+
+
+        // POSTS ~here
+        ImageButton like_button = findViewById(R.id.like_post1);
+        ImageButton like_button2 = findViewById(R.id.like_post2);
+        Button report1 = findViewById(R.id.report1);
+        Button report2 = findViewById(R.id.report2);
+
+
+
+        like_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(!liked1){
+                    like_button.setImageResource(R.drawable.red_heart_like);
+                    liked1 = true;
+                }
+                else{
+                    like_button.setImageResource(R.drawable.blank_heart_like);
+                    liked1 = false;
+                }
+            }
+        });
+        like_button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(!liked2){
+                    like_button2.setImageResource(R.drawable.red_heart_like);
+                    liked2 = true;
+                }
+                else{
+                    like_button2.setImageResource(R.drawable.blank_heart_like);
+                    liked2 = false;
+                }
+            }
+        });
+        report1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(),"Post reported",Toast.LENGTH_SHORT).show();
+            }
+        });
+        report2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(),"Post reported",Toast.LENGTH_SHORT).show();
+            }
+        });
 
     }
 }
