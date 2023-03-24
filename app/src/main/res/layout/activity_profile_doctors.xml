@@ -314,7 +314,7 @@
             </LinearLayout>
 
             <Button
-                android:id="@+id/button7"
+                android:id="@+id/show_all_post_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="#0000"

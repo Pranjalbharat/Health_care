@@ -74,17 +74,13 @@ public class profile_doctors extends AppCompatActivity {
         });
 
 
-//        String fullname = cloud_data[0]+" "+cloud_data[1];
-//        Name.setText(fullname);
-//        Bio.setText(cloud_data[2]);
-
-
 
         // POSTS ~here
         ImageButton like_button = findViewById(R.id.like_post1);
         ImageButton like_button2 = findViewById(R.id.like_post2);
         Button report1 = findViewById(R.id.report1);
         Button report2 = findViewById(R.id.report2);
+        Button showAll = findViewById(R.id.show_all_post_button);
 
 
 
@@ -124,6 +120,13 @@ public class profile_doctors extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getApplicationContext(),"Post reported",Toast.LENGTH_SHORT).show();
+            }
+        });
+        showAll.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent= new Intent(getApplicationContext(),all_posts_profile.class);
+                startActivity(intent);
             }
         });
 
