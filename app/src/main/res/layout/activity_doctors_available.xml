@@ -59,7 +59,7 @@
                         android:textSize="20sp"
                         android:layout_marginTop="10dp"
 
-                        android:text="Shubham" />
+                        android:text="Name" />
 
 
                 </LinearLayout>
@@ -107,7 +107,7 @@
                         android:textSize="20sp"
                         android:layout_marginTop="10dp"
 
-                        android:text="Pranjal " />
+                        android:text="Name" />
 
 
                 </LinearLayout>
@@ -155,7 +155,7 @@
                         android:textSize="20sp"
                         android:layout_marginTop="10dp"
 
-                        android:text="Rashmi " />
+                        android:text="Name" />
 
 
                 </LinearLayout>
@@ -203,7 +203,7 @@
                         android:textSize="20sp"
                         android:layout_marginTop="10dp"
 
-                        android:text="Shreya Mishra" />
+                        android:text="Name" />
 
 
                 </LinearLayout>
@@ -251,7 +251,7 @@
                         android:textSize="20sp"
                         android:layout_marginTop="10dp"
 
-                        android:text="Swayam" />
+                        android:text="Name" />
 
 
                 </LinearLayout>
@@ -299,7 +299,7 @@
                         android:textSize="20sp"
                         android:layout_marginTop="10dp"
 
-                        android:text="Neeraj" />
+                        android:text="Name" />
 
 
                 </LinearLayout>
@@ -347,7 +347,7 @@
                         android:textSize="20sp"
                         android:layout_marginTop="10dp"
 
-                        android:text="Vanshika" />
+                        android:text="Name" />
 
 
                 </LinearLayout>
@@ -395,7 +395,7 @@
                         android:textSize="20sp"
                         android:layout_marginTop="10dp"
 
-                        android:text="Ditya" />
+                        android:text="Name" />
 
 
                 </LinearLayout>
@@ -443,7 +443,7 @@
                         android:textSize="20sp"
                         android:layout_marginTop="10dp"
 
-                        android:text="Pranshu Puhal" />
+                        android:text="Name" />
 
 
                 </LinearLayout>
@@ -491,7 +491,7 @@
                         android:textSize="20sp"
                         android:layout_marginTop="10dp"
 
-                        android:text="Sucrose" />
+                        android:text="Name" />
 
 
                 </LinearLayout>
