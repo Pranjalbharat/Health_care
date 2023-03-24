@@ -32,8 +32,6 @@ public class DoctorsAvailable extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), profile_doctors.class);
                 intent.putExtra("data", str);
                 startActivity(intent);
-                finish();
-
             }
         });
 
@@ -44,8 +42,6 @@ public class DoctorsAvailable extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), profile_doctors.class);
                 intent.putExtra("data", str);
                 startActivity(intent);
-                finish();
-
             }
         });
 
@@ -56,8 +52,6 @@ public class DoctorsAvailable extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), profile_doctors.class);
                 intent.putExtra("data", str);
                 startActivity(intent);
-                finish();
-
             }
         });
 
@@ -68,8 +62,6 @@ public class DoctorsAvailable extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), profile_doctors.class);
                 intent.putExtra("data", str);
                 startActivity(intent);
-                finish();
-
             }
         });
 
@@ -80,8 +72,6 @@ public class DoctorsAvailable extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), profile_doctors.class);
                 intent.putExtra("data", str);
                 startActivity(intent);
-                finish();
-
             }
         });
 
@@ -92,8 +82,6 @@ public class DoctorsAvailable extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), profile_doctors.class);
                 intent.putExtra("data", str);
                 startActivity(intent);
-                finish();
-
             }
         });
 
@@ -104,8 +92,6 @@ public class DoctorsAvailable extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), profile_doctors.class);
                 intent.putExtra("data", str);
                 startActivity(intent);
-                finish();
-
             }
         });
 
@@ -116,8 +102,6 @@ public class DoctorsAvailable extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), profile_doctors.class);
                 intent.putExtra("data", str);
                 startActivity(intent);
-                finish();
-
             }
         });
 
@@ -128,8 +112,6 @@ public class DoctorsAvailable extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), profile_doctors.class);
                 intent.putExtra("data", str);
                 startActivity(intent);
-                finish();
-
             }
         });
 
@@ -140,8 +122,6 @@ public class DoctorsAvailable extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), profile_doctors.class);
                 intent.putExtra("data", str);
                 startActivity(intent);
-                finish();
-
             }
         });
 

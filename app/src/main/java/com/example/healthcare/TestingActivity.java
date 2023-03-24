@@ -60,7 +60,6 @@ public class TestingActivity extends AppCompatActivity {
 
                 Intent intent= new Intent(getApplicationContext(),DoctorsAvailable.class);
                 startActivity(intent);
-                finish();
             }
         });
 
@@ -77,7 +76,6 @@ public class TestingActivity extends AppCompatActivity {
 //                Toast.makeText(getApplicationContext(),doctor_name,Toast.LENGTH_SHORT).show();
                 intent.putExtra("data", doctor_name);
                 startActivity(intent);
-                finish();
             }
         });
 
