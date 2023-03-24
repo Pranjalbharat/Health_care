@@ -43,7 +43,18 @@
         app:layout_constraintTop_toBottomOf="@+id/editTextEmail"
         app:layout_constraintVertical_bias="0.0" />
 
-
+    <ProgressBar
+        android:id="@+id/progressbar"
+        android:layout_width="0dp"
+        android:layout_height="7dp"
+        android:layout_marginStart="168dp"
+        android:layout_marginEnd="195dp"
+        android:layout_marginBottom="8dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/button2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPassword" />
 
 
     <Button
