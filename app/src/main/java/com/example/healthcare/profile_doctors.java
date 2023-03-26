@@ -33,9 +33,6 @@ public class profile_doctors extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        progressBar=findViewById(R.id.progressbar);
-
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile_doctors);
 
@@ -51,6 +48,8 @@ public class profile_doctors extends AppCompatActivity {
         String key = "Doctor "+str;
         HashMap<String,Object> data = new HashMap<>();
 
+        progressBar=findViewById(R.id.progressbar);
+        progressBar.setVisibility(View.VISIBLE);
         /*
              //use this to receive data
              String str = send_text.getText().toString();
@@ -69,6 +68,7 @@ public class profile_doctors extends AppCompatActivity {
 
                 if (task.isSuccessful()) {
                     DocumentSnapshot document = task.getResult();
+                    progressBar.setVisibility(View.GONE);
                     if (document.exists()) {
                        // progressBar.setVisibility(View.INVISIBLE);
                         Map<String, Object> map = document.getData();
