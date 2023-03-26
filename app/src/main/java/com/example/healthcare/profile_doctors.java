@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,9 +28,14 @@ public class profile_doctors extends AppCompatActivity {
 
     private boolean liked1 = false;
     private boolean liked2 = false;
+    private ProgressBar progressBar;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        progressBar=findViewById(R.id.progressbar);
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile_doctors);
 
@@ -39,10 +45,12 @@ public class profile_doctors extends AppCompatActivity {
         TextView Name = findViewById(R.id.username_text);
         TextView Bio = findViewById(R.id.bio_text);
 
+
         Intent intent = getIntent();
         String str = intent.getStringExtra("data");
         String key = "Doctor "+str;
         HashMap<String,Object> data = new HashMap<>();
+
         /*
              //use this to receive data
              String str = send_text.getText().toString();
@@ -50,18 +58,25 @@ public class profile_doctors extends AppCompatActivity {
              intent.putExtra("message_key", str);
          */
 
+
+
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         DocumentReference docRef = db.collection("users").document(key);
+
         docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+
                 if (task.isSuccessful()) {
                     DocumentSnapshot document = task.getResult();
                     if (document.exists()) {
+                       // progressBar.setVisibility(View.INVISIBLE);
                         Map<String, Object> map = document.getData();
                         String fetchname = (String) map.get("First name").toString() +" "+map.get("Last name").toString();
                         Name.setText(fetchname);
                         Bio.setText(map.get("Profession").toString());
+                       // progressBar.setProgress(1);
+                        //progressBar.setVisibility(View.GONE);
 
                     } else {
                         Toast.makeText(getApplicationContext(),"Failed",Toast.LENGTH_SHORT).show();

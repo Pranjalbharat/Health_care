@@ -46,4 +46,12 @@
         android:layout_height="wrap_content"
         android:text="Available Doctors" />
 
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="UserPage" />
+
+
+
 </LinearLayout>

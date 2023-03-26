@@ -20,6 +20,7 @@ public class TestingActivity extends AppCompatActivity {
     private TextView user_details;
     private EditText doctor_input;
     private Button Available_doctors;
+    private Button UserPage;
     private FirebaseUser user;
 
 
@@ -35,6 +36,7 @@ public class TestingActivity extends AppCompatActivity {
         user_details=findViewById(R.id.user_details);
         user=mauth.getCurrentUser();
         Available_doctors=findViewById(R.id.button3);
+        UserPage=findViewById(R.id.button4);
         if(user == null){
             Intent intent= new Intent(getApplicationContext(),MainActivity.class);
             startActivity(intent);
@@ -59,6 +61,14 @@ public class TestingActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 Intent intent= new Intent(getApplicationContext(),DoctorsAvailable.class);
+                startActivity(intent);
+            }
+        });
+
+        UserPage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent= new Intent(getApplicationContext(),HomePage.class);
                 startActivity(intent);
             }
         });
