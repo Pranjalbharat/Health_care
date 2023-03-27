@@ -1,5 +1,7 @@
 package com.example.healthcare;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,9 +30,18 @@ public class profile_card_adapter  extends RecyclerView.Adapter<profile_card_ada
     @Override
     public void onBindViewHolder(@NonNull profile_card_adapter.posts_viewHolder holder, int position) {
         String source = data[position];
-//        holder.post_image.setBackgroundResource(Integer.parseInt(source));
-//        holder.post_image.setImageResource(Integer.parseInt(source));
         holder.name.setText(source);
+        holder.imageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // starting profile page.
+                Intent intent = new Intent(view.getContext(), profile_doctors.class);
+                intent.putExtra("data", source);
+                view.getContext().startActivity(intent);
+
+            }
+        });
+
     }
 
     @Override
@@ -41,9 +52,11 @@ public class profile_card_adapter  extends RecyclerView.Adapter<profile_card_ada
     public class posts_viewHolder extends RecyclerView.ViewHolder{
 
         TextView name;
+        ImageButton imageButton;
         public posts_viewHolder(@NonNull View itemView) {
             super(itemView);
             name = itemView.findViewById(R.id.name_text);
+            imageButton = itemView.findViewById(R.id.imageButton_card);
 
         }
     }

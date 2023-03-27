@@ -28,7 +28,6 @@ public class DoctorsAvailable extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_doctors_available);
-
         // recycler view
         RecyclerView all_post = findViewById(R.id.all_posts);
         all_post.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
