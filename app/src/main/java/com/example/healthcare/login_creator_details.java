@@ -72,6 +72,7 @@ public class login_creator_details extends AppCompatActivity {
         });
 
 
+
         // Submit details On click function
         Button submit_button = findViewById(R.id.submit_button);
         submit_button.setOnClickListener(new View.OnClickListener() {
