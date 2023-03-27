@@ -22,6 +22,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -33,7 +35,7 @@ public class login_creator_details extends AppCompatActivity {
     String[] professions = {"Doctor", "Pharmacist", "Nurse", "Cardiologist", "Critical Care Medicine Physician Assistant", "Dentist", "Dermatologist",
             "Dietitian", "Genetic Counselor/Counsellor", "Occupational Therapist", "Nephrologist", "Neurologist", "Neuropsychologist" , "Pathologist" , "General practitioner","Psychiatrist",
     "Psychologist","Mental Health Counselor","Yoga Instructor","Physical Therapist","Sport Psychologist","Gynaecologist","General Doctor","Medical Student"};
-
+    private FirebaseAuth auth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +49,10 @@ public class login_creator_details extends AppCompatActivity {
         EditText email = findViewById(R.id.editTextTextEmailAddress);
         EditText address = findViewById(R.id.editTextTextPostalAddress);
         EditText profession = findViewById(R.id.multiAutoCompleteTextView);
-
+        auth= FirebaseAuth.getInstance();
+        FirebaseUser currentUser = auth.getCurrentUser();
+        assert currentUser != null;
+        String Uid = currentUser.getUid();
 
 
         // For Multi Auto Complete Text View
@@ -102,9 +107,9 @@ public class login_creator_details extends AppCompatActivity {
                 }
 
                 if(data_check){
-                    HashMap<String,String> map = RecieveData(name,lastName,email,number,address,profession);
+                    HashMap<String,String> map = RecieveData(name,lastName,email,number,address,profession,Uid);
                     FirebaseFirestore db = FirebaseFirestore.getInstance();
-                    db.collection("users").document("Doctor "+name.getText())
+                    db.collection("Doctors").document("Dr. "+name.getText()+" "+lastName.getText())
                             .set(map).addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
@@ -126,7 +131,7 @@ public class login_creator_details extends AppCompatActivity {
 
     }
 
-    HashMap<String,String> RecieveData(EditText firstName, EditText lastName, EditText email, EditText number, EditText address, EditText profession){
+    HashMap<String,String> RecieveData(EditText firstName, EditText lastName, EditText email, EditText number, EditText address, EditText profession,String Uid){
         HashMap<String,String> map = new HashMap<>();
         map.put("First name",firstName.getText().toString());
         map.put("Last name",lastName.getText().toString());
@@ -134,6 +139,7 @@ public class login_creator_details extends AppCompatActivity {
         map.put("Address",address.getText().toString());
         map.put("Phone Number",number.getText().toString());
         map.put("Profession",profession.getText().toString());
+        map.put("Uid",Uid);
 
         return map;
     }
