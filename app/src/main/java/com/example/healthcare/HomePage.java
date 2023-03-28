@@ -59,12 +59,6 @@ public class HomePage extends AppCompatActivity {
         d_name10.setText(D_names[9]);
 
 
-
-
-
-
-
-
         Button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

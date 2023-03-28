@@ -33,6 +33,7 @@ public class profile_doctors extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile_doctors);
 
@@ -47,6 +48,7 @@ public class profile_doctors extends AppCompatActivity {
         String str = intent.getStringExtra("data");
         String key = "Doctor "+str;
         HashMap<String,Object> data = new HashMap<>();
+
 
         progressBar=findViewById(R.id.progressbar);
         progressBar.setVisibility(View.VISIBLE);
