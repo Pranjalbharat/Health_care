@@ -52,6 +52,18 @@
         android:layout_height="wrap_content"
         android:text="UserPage" />
 
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="login page2" />
+
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Doctors's Self Profile" />
+
 
 
 </LinearLayout>

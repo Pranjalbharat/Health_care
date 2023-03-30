@@ -39,6 +39,7 @@ public class TestingActivity extends AppCompatActivity {
         login=findViewById(R.id.button5);
         Available_doctors=findViewById(R.id.button3);
         HomePage=findViewById(R.id.button4);
+        Button Self_profile=findViewById(R.id.button6);
         if(user == null){
             Intent intent= new Intent(getApplicationContext(),MainActivity.class);
             startActivity(intent);
@@ -63,6 +64,16 @@ public class TestingActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 Intent intent= new Intent(getApplicationContext(),LoginCreatorDetails2.class);
+                startActivity(intent);
+            }
+        });
+
+
+        Self_profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent= new Intent(getApplicationContext(),SelfProfileDoctor.class);
                 startActivity(intent);
             }
         });

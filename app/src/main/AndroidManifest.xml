@@ -12,6 +12,12 @@
         android:theme="@style/Theme.Healthcare"
         tools:targetApi="31">
         <activity
+            android:name=".Add_postD"
+            android:exported="false" />
+        <activity
+            android:name=".SelfProfileDoctor"
+            android:exported="false" />
+        <activity
             android:name=".LoginCreatorDetails2"
             android:exported="false" />
         <activity
